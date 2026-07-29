@@ -11,8 +11,8 @@ class GradeDocuments(BaseModel):
     binary_score: str = Field(
         description="Documents are relevant to the question, 'yes' or 'no'"
     )
-    
-    
+
+
 structured_llm_grader = llm.with_structured_output(GradeDocuments)
 
 system = """You are a grader assessing relevance of a retrieved document to a user question. \n

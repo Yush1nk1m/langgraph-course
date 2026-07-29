@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+
 load_dotenv()
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -12,7 +13,12 @@ urls = [
     "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/",
 ]
 
-docs = [UnstructuredLoader(web_url=url, chunking_strategy="basic", max_characters=1000000).load() for url in urls]
+docs = [
+    UnstructuredLoader(
+        web_url=url, chunking_strategy="basic", max_characters=1000000
+    ).load()
+    for url in urls
+]
 docs_list = [item for sublist in docs for item in sublist]
 
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(

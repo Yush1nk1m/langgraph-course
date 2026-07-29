@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Debug WebSearch Module",
+      "type": "debugpy",
+      "request": "launch",
+      // 현재 열린 파일(${file}) 대신 모듈 경로로 직접 지정합니다.
+      "module": "graph.nodes.websearch",
+      "console": "integratedTerminal",
+      // 중요: 프로젝트 루트를 파이썬 경로로 강제 지정합니다.
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    }
+  ]
+}
